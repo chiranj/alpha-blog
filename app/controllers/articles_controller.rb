@@ -2,8 +2,6 @@ class ArticlesController < ApplicationController
   
   def index
     @article = Article.all
-
-
   end
   
   def new
@@ -11,6 +9,14 @@ class ArticlesController < ApplicationController
     @article = Article.new
     
   end
+  
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    flash[:notice] = " Article was Successfully Deleted"
+    redirect_to articles_path 
+  end
+  
   
   def edit
     @article = Article.find(params[:id])
