@@ -1,6 +1,6 @@
-<h1>Create an Article</h1>
+<h1>Edit existing Article</h1>
 
-  <% if @article.errors.any? %>
+<% if @article.errors.any? %>
   <h2>Your article did not submit due to below errors!</h2>
   <ul>
     <% @article.errors.full_messages.each do |msg| %>
@@ -22,8 +22,8 @@
   <p>
     <%= f.submit %>
   </p>
+  
+  <%= link_to 'Back to Articles Listings', articles_path %>
 
 
 <%end %>
-
-<%= link_to 'Back to Articles Listings', articles_path %>
